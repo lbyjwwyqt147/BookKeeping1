@@ -9,9 +9,9 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import pers.liujunyi.tally.controller.UserController;
-import pers.liujunyi.tally.entity.TCoreUser;
-import pers.liujunyi.tally.util.DateTimeUtil;
+import pers.liujunyi.bookkeeping.controller.UserController;
+import pers.liujunyi.bookkeeping.entity.TCoreUser;
+import pers.liujunyi.bookkeeping.util.DateTimeUtil;
 
 
 /***

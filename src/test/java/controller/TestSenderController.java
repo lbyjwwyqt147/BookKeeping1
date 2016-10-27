@@ -9,7 +9,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import pers.liujunyi.tally.controller.SenderController;
+import pers.liujunyi.bookkeeping.controller.SenderController;
 
 /***
  * 文件名称: TestSenderController.java

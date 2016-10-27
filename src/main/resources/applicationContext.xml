@@ -61,7 +61,7 @@
     
 
     <!-- 定义数据源，使用自己实现的数据源 -->  
-    <bean id="dataSource" class="pers.liujunyi.tally.datasource.DynamicDataSource">  
+    <bean id="dataSource" class="pers.liujunyi.bookkeeping.datasource.DynamicDataSource">  
         <!-- 设置多个数据源 -->  
         <property name="targetDataSources">  
             <map key-type="java.lang.String">  
@@ -109,7 +109,7 @@
     </tx:advice>
 
     <!-- 定义数据源AOP切面处理器 -->  
-    <bean class="pers.liujunyi.tally.aop.DataSourceAspect" id="dataSourceAspect">  
+    <bean class="pers.liujunyi.bookkeeping.aop.DataSourceAspect" id="dataSourceAspect">  
         <!-- 指定事务策略 -->  
         <property name="txAdvice" ref="transactionAdvice"/>  
         <!-- 指定slave方法的前缀（非必须） -->  
@@ -117,9 +117,9 @@
     </bean>
 
     <!-- 自动扫描dao service组件，需要把controller去掉，否则影响事务管理 -->  
-    <context:component-scan base-package="pers.liujunyi.tally">
-        <context:exclude-filter type="regex"  expression="pers.liujunyi.tally.controller" />
-        <!--  <context:exclude-filter type="regex"  expression="pers.liujunyi.tally.util" />  --> 
+    <context:component-scan base-package="pers.liujunyi.bookkeeping">
+        <context:exclude-filter type="regex"  expression="pers.liujunyi.bookkeeping.controller" />
+        <!--  <context:exclude-filter type="regex"  expression="pers.liujunyi.bookkeeping.util" />  --> 
    </context:component-scan>  
    
     <!-- 配置切面 -->
@@ -135,7 +135,7 @@
     </aop:config>
     
     <aop:aspectj-autoproxy proxy-target-class="true"/>  
-    <bean class="pers.liujunyi.tally.aop.LogAspect" />  
+    <bean class="pers.liujunyi.bookkeeping.aop.LogAspect" />  
     
     <!-- Spring整合mybatis -->
    <bean id="lazySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  

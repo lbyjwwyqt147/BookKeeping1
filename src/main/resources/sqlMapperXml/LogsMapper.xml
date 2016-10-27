@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="pers.liujunyi.tally.mapper.TCoreLogsMapper" >
-  <resultMap id="BaseResultMap" type="pers.liujunyi.tally.entity.TCoreLogs" >
+<mapper namespace="pers.liujunyi.bookkeeping.mapper.TCoreLogsMapper" >
+  <resultMap id="BaseResultMap" type="pers.liujunyi.bookkeeping.entity.TCoreLogs" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
     <result column="log_content" property="logContent" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
   </sql>
  
   <!-- 新增信息 -->
-  <insert id="addLogs" parameterType="pers.liujunyi.tally.entity.TCoreLogs" >
+  <insert id="addLogs" parameterType="pers.liujunyi.bookkeeping.entity.TCoreLogs" >
     insert into t_core_logs
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -109,7 +109,7 @@
   </insert>
   
   <!-- 更新信息 -->
-  <update id="updateLogs" parameterType="pers.liujunyi.tally.entity.TCoreLogs" >
+  <update id="updateLogs" parameterType="pers.liujunyi.bookkeeping.entity.TCoreLogs" >
     update t_core_logs
     <set >
       <if test="userId != null" >

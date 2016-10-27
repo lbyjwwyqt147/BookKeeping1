@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pers.liujunyi.tally.mapper.IAttachmentMapper">
+<mapper namespace="pers.liujunyi.bookkeeping.mapper.IAttachmentMapper">
    
   <!-- 返回用户list列表 -->  
-  <resultMap id="BaseResultMap" type="pers.liujunyi.tally.entity.TCoreAttachment" >
+  <resultMap id="BaseResultMap" type="pers.liujunyi.bookkeeping.entity.TCoreAttachment" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
     <result column="project_id" property="projectId" jdbcType="VARCHAR" />
@@ -31,7 +31,7 @@
     <result column="attribute_three" property="attributeThree" jdbcType="VARCHAR" />
   </resultMap>
   <!--  -->
-  <resultMap id="ResultMapWithBLOBs" type="pers.liujunyi.tally.entity.TCoreAttachment" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="pers.liujunyi.bookkeeping.entity.TCoreAttachment" extends="BaseResultMap" >
     <result column="attach_data" property="attachData" jdbcType="LONGVARBINARY" />
   </resultMap>
   

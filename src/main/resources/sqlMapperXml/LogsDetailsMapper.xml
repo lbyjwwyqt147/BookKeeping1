@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="pers.liujunyi.tally.mapper.TCoreLogsDetailsMapper" >
-  <resultMap id="BaseResultMap" type="pers.liujunyi.tally.entity.TCoreLogsDetails" >
+<mapper namespace="pers.liujunyi.bookkeeping.mapper.TCoreLogsDetailsMapper" >
+  <resultMap id="BaseResultMap" type="pers.liujunyi.bookkeeping.entity.TCoreLogsDetails" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="logs_id" property="logsId" jdbcType="VARCHAR" />
     <result column="modification_feild" property="modificationFeild" jdbcType="VARCHAR" />
@@ -10,7 +10,7 @@
     <result column="attribute_two" property="attributeTwo" jdbcType="VARCHAR" />
     <result column="attribute_three" property="attributeThree" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="pers.liujunyi.tally.entity.TCoreLogsDetailsWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="pers.liujunyi.bookkeeping.entity.TCoreLogsDetailsWithBLOBs" extends="BaseResultMap" >
     <result column="old_content" property="oldContent" jdbcType="LONGVARCHAR" />
     <result column="new_content" property="newContent" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -22,7 +22,7 @@
   </sql>
  
   <!-- 新增数据 -->
-  <insert id="addLogsDetails" parameterType="pers.liujunyi.tally.entity.TCoreLogsDetailsWithBLOBs" >
+  <insert id="addLogsDetails" parameterType="pers.liujunyi.bookkeeping.entity.TCoreLogsDetailsWithBLOBs" >
      <!-- 生成主键的uuid -->
     <selectKey keyProperty="id" resultType="String" order="BEFORE">  
         select  replace(uuid(),'-','')  from dual  
@@ -90,7 +90,7 @@
   </insert>
   
   <!-- 更新数据 -->
-  <update id="updateLogsDetails" parameterType="pers.liujunyi.tally.entity.TCoreLogsDetailsWithBLOBs" >
+  <update id="updateLogsDetails" parameterType="pers.liujunyi.bookkeeping.entity.TCoreLogsDetailsWithBLOBs" >
     update t_core_logs_details
     <set >
       <if test="logsId != null" >

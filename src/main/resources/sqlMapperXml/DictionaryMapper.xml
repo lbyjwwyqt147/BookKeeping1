@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="pers.liujunyi.tally.mapper.ICoreDictionaryMapper" >
+<mapper namespace="pers.liujunyi.bookkeeping.mapper.ICoreDictionaryMapper" >
   
   <!-- 集合列表 -->
-  <resultMap id="BaseResultMap" type="pers.liujunyi.tally.entity.TCoreDictionary" >
+  <resultMap id="BaseResultMap" type="pers.liujunyi.bookkeeping.entity.TCoreDictionary" >
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="dict_code" jdbcType="VARCHAR" property="dictCode" />
     <result column="dict_word" jdbcType="VARCHAR" property="dictWord" />
@@ -133,7 +133,7 @@
   </delete>
   
   <!-- 新增字典信息 -->
-  <insert id="addDict" parameterType="pers.liujunyi.tally.entity.TCoreDictionary" >
+  <insert id="addDict" parameterType="pers.liujunyi.bookkeeping.entity.TCoreDictionary" >
      <!-- 生成主键的uuid -->
     <selectKey keyProperty="id" resultType="String" order="BEFORE">  
         select  replace(uuid(),'-','')  from dual  
@@ -261,7 +261,7 @@
   </insert>
   
   <!-- 修改字典信息 -->
-  <update id="editDict" parameterType="pers.liujunyi.tally.entity.TCoreDictionary" >
+  <update id="editDict" parameterType="pers.liujunyi.bookkeeping.entity.TCoreDictionary" >
     update t_core_dictionary
     <set >
       <if test="dictCode != null" >
